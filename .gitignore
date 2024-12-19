@@ -1,0 +1,54 @@
+# Ignore a pasta bin/ onde ficam os arquivos compilados
+/bin/
+/obj/
+
+# Ignore arquivos de configuração do Visual Studio
+.vs/
+.vscode/
+.idea/
+
+# Arquivos de usuário do Visual Studio (não devem ser versionados)
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Arquivos de backup do Visual Studio
+*.bak
+
+# Arquivos temporários gerados pelo Visual Studio durante a compilação
+*.cache
+*.log
+
+# Arquivos de configuração do .NET Core ou .NET (caso o projeto use)
+project.lock.json
+project.fragment.lock.json
+
+# Arquivos de pacotes NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Folders de pacotes
+/packages/
+
+# Arquivos de dependências de pacotes
+packages/*
+
+# Arquivos de cache do npm (se houver dependências front-end)
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Arquivos de configuração de publicação (caso existam)
+Publish/
+
+# Arquivos de configuração do ASP.NET (se for um projeto combinado)
+appsettings.json
+
+# Arquivos do JetBrains Rider (se você usar Rider)
+.idea/
+
+# Arquivos temporários de compilação
+Thumbs.db
+Desktop.ini
