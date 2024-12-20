@@ -18,14 +18,15 @@ Antes de começar, você precisa ter as seguintes ferramentas instaladas:
 
 ```sql
 CREATE TABLE WeatherForecast (
-    Id INT PRIMARY KEY IDENTITY,
-    Date DATE NOT NULL,
-    Weekday VARCHAR(50),
-    MaxTemperature INT,
-    MinTemperature INT,
-    Humidity INT,
-    Rain INT,
-    Description VARCHAR(255)
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Date NVARCHAR(10) NOT NULL,
+    Weekday NVARCHAR(50),
+    MaxTemperature FLOAT NOT NULL,
+    MinTemperature FLOAT NOT NULL,
+    Humidity FLOAT NOT NULL,
+    Rain FLOAT NOT NULL,
+    Description NVARCHAR(255) NOT NULL,
+    TemperatureChange NVARCHAR(50) NULL
 );
 ```
 
