@@ -14,10 +14,8 @@ Este projeto permite consultar e salvar dados de previsão do tempo utilizando a
 
 ### 2. Tela de Previsão do Tempo sem Grid
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a73f6fa3-5458-4507-a192-351a9e514d2c" alt="Tela de Previsão do Tempo 1" width="49.5%" style="margin-right: 10px;" />
-  <img src="https://github.com/user-attachments/assets/f75597bd-a033-4581-ada2-567a379eeaa3" alt="Tela de Previsão do Tempo 2" width="50%" />
-</p>
+<img src="https://github.com/user-attachments/assets/a73f6fa3-5458-4507-a192-351a9e514d2c" alt="Tela de Previsão do Tempo 1"  />
+<img src="https://github.com/user-attachments/assets/f75597bd-a033-4581-ada2-567a379eeaa3" alt="Tela de Previsão do Tempo 2"  />
 
 <br />
 
