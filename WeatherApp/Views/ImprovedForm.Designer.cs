@@ -36,8 +36,15 @@
 			lblIcon = new PictureBox();
 			lblTemp = new Label();
 			lblDescription = new Label();
+			lblHumidity = new Label();
+			pictureBox1 = new PictureBox();
+			pictureBox2 = new PictureBox();
+			lblMax = new Label();
+			lblMin = new Label();
 			pNavbar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)lblIcon).BeginInit();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+			((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
 			SuspendLayout();
 			// 
 			// lblCity
@@ -112,12 +119,70 @@
 			lblDescription.TabIndex = 5;
 			lblDescription.Text = "Parcialmente Nublado";
 			// 
+			// lblHumidity
+			// 
+			lblHumidity.AutoSize = true;
+			lblHumidity.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblHumidity.ForeColor = Color.Gray;
+			lblHumidity.Location = new Point(517, 178);
+			lblHumidity.Name = "lblHumidity";
+			lblHumidity.Size = new Size(94, 28);
+			lblHumidity.TabIndex = 6;
+			lblHumidity.Text = "Umidade";
+			// 
+			// pictureBox1
+			// 
+			pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+			pictureBox1.Location = new Point(517, 104);
+			pictureBox1.Name = "pictureBox1";
+			pictureBox1.Size = new Size(30, 30);
+			pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+			pictureBox1.TabIndex = 7;
+			pictureBox1.TabStop = false;
+			// 
+			// pictureBox2
+			// 
+			pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+			pictureBox2.Location = new Point(517, 141);
+			pictureBox2.Name = "pictureBox2";
+			pictureBox2.Size = new Size(30, 30);
+			pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+			pictureBox2.TabIndex = 8;
+			pictureBox2.TabStop = false;
+			// 
+			// lblMax
+			// 
+			lblMax.AutoSize = true;
+			lblMax.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblMax.ForeColor = Color.Gray;
+			lblMax.Location = new Point(553, 104);
+			lblMax.Name = "lblMax";
+			lblMax.Size = new Size(60, 28);
+			lblMax.TabIndex = 9;
+			lblMax.Text = "30 °C";
+			// 
+			// lblMin
+			// 
+			lblMin.AutoSize = true;
+			lblMin.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblMin.ForeColor = Color.Gray;
+			lblMin.Location = new Point(553, 141);
+			lblMin.Name = "lblMin";
+			lblMin.Size = new Size(60, 28);
+			lblMin.TabIndex = 10;
+			lblMin.Text = "20 °C";
+			// 
 			// ImprovedForm
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
 			ClientSize = new Size(743, 404);
+			Controls.Add(lblMin);
+			Controls.Add(lblMax);
+			Controls.Add(pictureBox2);
+			Controls.Add(pictureBox1);
+			Controls.Add(lblHumidity);
 			Controls.Add(lblDescription);
 			Controls.Add(lblTemp);
 			Controls.Add(lblIcon);
@@ -130,6 +195,8 @@
 			pNavbar.ResumeLayout(false);
 			pNavbar.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)lblIcon).EndInit();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+			((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -143,5 +210,10 @@
 		private PictureBox lblIcon;
 		private Label lblTemp;
 		private Label lblDescription;
+		private Label lblHumidity;
+		private PictureBox pictureBox1;
+		private PictureBox pictureBox2;
+		private Label lblMax;
+		private Label lblMin;
 	}
 }

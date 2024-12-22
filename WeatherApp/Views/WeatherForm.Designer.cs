@@ -120,7 +120,7 @@
 			btnOtherView.Name = "btnOtherView";
 			btnOtherView.Size = new Size(95, 27);
 			btnOtherView.TabIndex = 5;
-			btnOtherView.Text = "Aprimorado";
+			btnOtherView.Text = "Exibir";
 			btnOtherView.UseVisualStyleBackColor = true;
 			btnOtherView.Click += btnOtherView_Click;
 			// 

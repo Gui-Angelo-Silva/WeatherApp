@@ -48,6 +48,9 @@ namespace WeatherApp.Views
 			lblCity.Text = weatherData.results.city;
 			lblTemp.Text = $"{weatherData.results.temp} °C";
 			lblDescription.Text = weatherData.results.description;
+			lblHumidity.Text = $"Umidade: {weatherData.results.forecast[0].humidity}%";
+			lblMax.Text = $"{weatherData.results.forecast[0].max} °C";
+			lblMin.Text = $"{weatherData.results.forecast[0].min} °C";
 
 			// Exibe o ícone correspondente
 			UpdateWeatherIcon(weatherData.results.condition_slug);
@@ -206,8 +209,8 @@ namespace WeatherApp.Views
 			card.Region = new Region(path);
 
 			card.Controls.Add(lblTempChange);
-			card.Controls.Add(lblMax);
 			card.Controls.Add(lblMin);
+			card.Controls.Add(lblMax);
 			card.Controls.Add(lblDay);
 
 			return card;
