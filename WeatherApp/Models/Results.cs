@@ -42,5 +42,21 @@ namespace WeatherApp.Models
 		/// A temperatura atual em graus Celsius (°C).
 		/// </value>
 		public double temp { get; set; }
+		
+		/// <summary>
+		/// Obtém ou define a condição do clima da cidade.
+		/// </summary>
+		/// <value>
+		/// Condição do clima descrito.
+		/// </value>
+		public string condition_slug { get; set; }
+		
+		/// <summary>
+		/// Obtém ou define a descrição do clima da cidade.
+		/// </summary>
+		/// <value>
+		/// Descrição do clima descrito.
+		/// </value>
+		public string description { get; set; }
 	}
 }

@@ -1,6 +1,7 @@
 using WeatherApp.Models;
 using WeatherApp.Repositories;
 using WeatherApp.Services;
+using WeatherApp.Views;
 
 namespace WeatherApp
 {
@@ -47,7 +48,7 @@ namespace WeatherApp
 				MessageBox.Show($"Erro ao obter os dados da API: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
-			
+
 			// Consulta os dados existentes no banco de dados
 			var databaseForecasts = database.GetAllWeatherDataFromDatabase();
 
@@ -55,9 +56,9 @@ namespace WeatherApp
 			// Se houver dados no banco, exibe-os na DataGridView.
 			// Caso contrário, exibe os dados obtidos da API, que podem ser mais recentes.
 			if (databaseForecasts.Count > 0)
-            {
+			{
 				dgvForecast.DataSource = databaseForecasts;
-            }
+			}
 			else
 			{
 				dgvForecast.DataSource = weatherData.results.forecast;
@@ -92,6 +93,12 @@ namespace WeatherApp
 			dgvForecast.Columns[5].HeaderText = "Chuva (mm)";
 			dgvForecast.Columns[6].HeaderText = "Descrição";
 			dgvForecast.Columns[7].HeaderText = "Mudança de Temperatura";
+		}
+
+		private void btnOtherView_Click(object sender, EventArgs e)
+		{
+			ImprovedForm improvedForm = new ImprovedForm();
+			improvedForm.ShowDialog();			
 		}
 	}
 }

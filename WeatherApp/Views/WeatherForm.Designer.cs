@@ -121,6 +121,7 @@
 			btnOtherView.TabIndex = 5;
 			btnOtherView.Text = "Aprimorado";
 			btnOtherView.UseVisualStyleBackColor = true;
+			btnOtherView.Click += btnOtherView_Click;
 			// 
 			// WeatherForm
 			// 
