@@ -1,4 +1,4 @@
-# WeatherApp
+# WeatherApp - Aplicativo de Previsão do Tempo com HGBrasil API
 
 Este projeto permite consultar e salvar dados de previsão do tempo utilizando a API do HGBrasil e armazená-los em um banco de dados.
 
@@ -6,14 +6,20 @@ Este projeto permite consultar e salvar dados de previsão do tempo utilizando a
 
 Antes de começar, você precisa ter as seguintes ferramentas instaladas:
 
-- .NET Core ou .NET 6+ (dependendo da versão do projeto)
-- SQL Server (ou outro banco de dados de sua escolha)
-- Conta no HGBrasil API para obter as credenciais de acesso
+- [.NET 6+ ou .NET Core](https://dotnet.microsoft.com/download) (dependendo da versão do projeto)
+- [SQL Server](https://www.microsoft.com/pt-br/sql-server) (ou outro banco de dados de sua escolha)
+- Conta na [API do HGBrasil](https://hgbrasil.com), que fornecerá o link da API para as previsões do tempo.
+
+## Passos para obter o link da API:
+1. Acesse o [site do HGBrasil](https://console.hgbrasil.com/documentation/weather#obter-cidade-por-codigo).
+2. Procure por Obter cidade por código.
+3. Copie o link da API e insira o código correspondente à sua cidade (Ex: Jales = 457398). O link da API será utilizado como parâmetro de busca para obter os dados da previsão do tempo da sua cidade.
 
 ## Configuração do Banco de Dados
 
 1. **Criar o Banco de Dados**:
    - Crie um banco de dados no SQL Server (ou outro banco de sua escolha).
+   - Coloque o nome do banco de dados de WeatherForecastDB.
    - Abaixo está o script SQL para criar a tabela onde as previsões de tempo serão armazenadas:
 
 ```sql
@@ -35,6 +41,29 @@ CREATE TABLE WeatherForecast (
 	 Condition NVARCHAR(20) NOT NULL,
     TemperatureChange NVARCHAR(50) NULL
 );
+
+INSERT INTO WeatherForecast (
+    Date, Weekday, MaxTemperature, MinTemperature, Humidity, Cloudiness, 
+    Rain, RainProbability, WindSpeedy, Sunrise, Sunset, MoonPhase, 
+    Description, Condition, TemperatureChange
+)
+VALUES (
+    '22/12',        -- Date
+    'Dom',          -- Weekday
+    27,             -- MaxTemperature
+    21,             -- MinTemperature
+    75,             -- Humidity
+    100,            -- Cloudiness
+    7.27,           -- Rain
+    100,            -- RainProbability
+    '3.36 km/h',    -- WindSpeedy
+    '05:40 am',     -- Sunrise
+    '07:01 pm',     -- Sunset
+    'Última fase',  -- MoonPhase (traduzido)
+    'Chuva',        -- Description
+    'Chuva',        -- Condition (traduzido)
+    NULL            -- TemperatureChange (não foi fornecido, então é NULL)
+);
 ```
 
 2. **Configuração da String de Conexão**:
@@ -43,37 +72,47 @@ CREATE TABLE WeatherForecast (
    - Database: Nome do banco de dados onde os dados serão armazenados (WeatherForecastDB).
    - Integrated Security: Utiliza a autenticação do Windows para acessar o banco de dados.
    - A string é a seguinte:
-```c#
-
+```csharp
 public static string ConnectionString => "Server=GUIGAS\\SQLEXPRESS;Database=WeatherForecastDB;Integrated Security=True;";
 ```
 
-## Configuração do Banco de Dados
+## Configuração da API
 
 Para consultar dados de previsão do tempo, o projeto utiliza a API do HGBrasil. Siga as instruções abaixo para configurar as credenciais da API.
 
 1. **Obter a chave da API**:
-   - Acesse o site da API do HGBrasil: https://hgbrasil.com.
+   - Acesse o site da API do HGBrasil: [https://hgbrasil.com](https://hgbrasil.com).
    - Registre-se para obter uma chave de API.
 
 2. **Configuração da URL da API**:
    - A URL para consultar a previsão do tempo é a seguinte:
 
-```c#
+```csharp
 string url = "https://api.hgbrasil.com/weather?woeid=457398";
 ```
 
 ## Executando o Projeto
 
 1. **Clonar o Repositório**:
+   - Clone o repositório para sua máquina local:
 
 ```cmd
 git clone https://github.com/Gui-Angelo-Silva/WeatherApp.git
 cd WeatherApp
 ```
 
-2. **Abra a pasta WeatherAppSolution**:
-   - Dê dois cliques em cima de WeatherAppSolution.sln
+2. **Abrir o Projeto:**:
+   - Abra a solução no Visual Studio (ou outra IDE de sua preferência):
+```cmd
+WeatherAppSolution.sln
+```
   
 3. **Executar o projeto**
-   - Aperte as seguintes teclas: F5 ou fn + F5
+   - Execute o projeto pressionando F5 ou Ctrl + F5 para iniciar o aplicativo em modo de depuração ou sem depuração.
+
+4. **Testando o Projeto:**
+   - Ao rodar o aplicativo, ele irá se conectar à API do HGBrasil para obter as previsões do tempo e exibir as informações na interface gráfica.
+   - A previsão será armazenada no banco de dados configurado, permitindo futuras consultas e visualizações.
+
+5. **Configuração do Banco de Dados:**
+   - Lembre-se de configurar a string de conexão corretamente e verificar se o banco de dados está acessível.
