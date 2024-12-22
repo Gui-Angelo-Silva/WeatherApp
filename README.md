@@ -4,6 +4,23 @@ Este projeto permite consultar e salvar dados de previsão do tempo utilizando a
 
 <br />
 
+## 📸 Capturas de Tela
+
+### 1. Tela de Previsão do Tempo com Grid
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/6527613e-f65b-4fc6-9110-37e85d74c4c7" alt="Tela de Previsão do Tempo com Grid" style="width: 100%; border: 1px solid #ccc; border-radius: 5px;" />
+</div>
+
+### 2. Tela de Previsão do Tempo sem Grid
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a73f6fa3-5458-4507-a192-351a9e514d2c" alt="Tela de Previsão do Tempo 1" width="49.5%" style="margin-right: 10px;" />
+  <img src="https://github.com/user-attachments/assets/f75597bd-a033-4581-ada2-567a379eeaa3" alt="Tela de Previsão do Tempo 2" width="50%" />
+</p>
+
+<br />
+
 ## ✅ Pré-requisitos
 
 Antes de começar, você precisa ter as seguintes ferramentas instaladas:
