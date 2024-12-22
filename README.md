@@ -51,39 +51,16 @@ CREATE TABLE WeatherForecast (
     MaxTemperature FLOAT NOT NULL,
     MinTemperature FLOAT NOT NULL,
     Humidity FLOAT NOT NULL,
-	 Cloudiness INT NOT NULL,
+    Cloudiness INT NOT NULL,
     Rain FLOAT NOT NULL,
-	 RainProbability FLOAT NOT NULL,
-	 WindSpeedy NVARCHAR(14) NOT NULL,
-	 Sunrise NVARCHAR(8) NOT NULL,
-	 Sunset NVARCHAR(8) NOT NULL,
-	 MoonPhase NVARCHAR(20) NOT NULL,
+    RainProbability FLOAT NOT NULL,
+    WindSpeedy NVARCHAR(14) NOT NULL,
+    Sunrise NVARCHAR(8) NOT NULL,
+    Sunset NVARCHAR(8) NOT NULL,
+    MoonPhase NVARCHAR(20) NOT NULL,
     Description NVARCHAR(255) NOT NULL,
-	 Condition NVARCHAR(20) NOT NULL,
+    Condition NVARCHAR(20) NOT NULL,
     TemperatureChange NVARCHAR(50) NULL
-);
-
-INSERT INTO WeatherForecast (
-    Date, Weekday, MaxTemperature, MinTemperature, Humidity, Cloudiness, 
-    Rain, RainProbability, WindSpeedy, Sunrise, Sunset, MoonPhase, 
-    Description, Condition, TemperatureChange
-)
-VALUES (
-    '22/12',        -- Date
-    'Dom',          -- Weekday
-    27,             -- MaxTemperature
-    21,             -- MinTemperature
-    75,             -- Humidity
-    100,            -- Cloudiness
-    7.27,           -- Rain
-    100,            -- RainProbability
-    '3.36 km/h',    -- WindSpeedy
-    '05:40 am',     -- Sunrise
-    '07:01 pm',     -- Sunset
-    'Última fase',  -- MoonPhase (traduzido)
-    'Chuva',        -- Description
-    'Chuva',        -- Condition (traduzido)
-    NULL            -- TemperatureChange (não foi fornecido, então é NULL)
 );
 ```
 
