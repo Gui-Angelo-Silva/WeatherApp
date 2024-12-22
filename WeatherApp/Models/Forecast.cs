@@ -50,28 +50,84 @@ namespace WeatherApp.Models
 		/// Um valor numérico representando a umidade em percentual (%).
 		/// </value>
 		public double humidity { get; set; }
+		
+		/// <summary>
+		/// Obtém ou define a nebulosidade prevista para o dia.
+		/// </summary>
+		/// <value>
+		/// Um valor numérico representando a nebulosidade em percentual (%).
+		/// </value>
+		public double cloudiness { get; set; }
 
 		/// <summary>
 		/// Obtém ou define a quantidade de chuva prevista para o dia.
 		/// </summary>
 		/// <value>
-		/// Um valor numérico representando a quantidade de chuva em milímetros (mm).
+		/// A quantidade de chuva em milímetros (mm).
 		/// </value>
 		public double rain { get; set; }
+
+		/// <summary>
+		/// Obtém ou define a probabilidade de chuva prevista para o dia.
+		/// </summary>
+		/// <value>
+		/// A probabilidade de chuva, representada em porcentagem (0 a 100%).
+		/// </value>
+		public double rain_probability { get; set; }
+
+		/// <summary>
+		/// Obtém ou define a velocidade do vento prevista para o dia.
+		/// </summary>
+		/// <value>
+		/// A velocidade do vento, representada como uma string (ex: "10 km/h").
+		/// </value>
+		public string wind_speedy { get; set; }
+
+		/// <summary>
+		/// Obtém ou define a hora em que o Sol nasceu no dia.
+		/// </summary>
+		/// <value>
+		/// A hora do amanhecer, representada como uma string (ex: "06:30").
+		/// </value>
+		public string sunrise { get; set; }
+
+		/// <summary>
+		/// Obtém ou define a hora em que o Sol se pôs no dia.
+		/// </summary>
+		/// <value>
+		/// A hora do pôr do Sol, representada como uma string (ex: "18:45").
+		/// </value>
+		public string sunset { get; set; }
+
+		/// <summary>
+		/// Obtém ou define a fase lunar do dia.
+		/// </summary>
+		/// <value>
+		/// A fase lunar, representada como uma string (ex: "Crescente", "Minguante").
+		/// </value>
+		public string moon_phase { get; set; }
 
 		/// <summary>
 		/// Obtém ou define a descrição geral do clima para o dia.
 		/// </summary>
 		/// <value>
-		/// Uma string que descreve o clima, como "Chuvas", "Chuvas Esparsas", etc.
+		/// Uma string descrevendo o clima esperado, como "Chuvas", "Chuvas Esparsas", etc.
 		/// </value>
 		public string description { get; set; }
+
+		/// <summary>
+		/// Obtém ou define a condição do clima para o dia.
+		/// </summary>
+		/// <value>
+		/// Uma string descrevendo a condição climática, como "Chuvas", "Nuvens", "Ensolarado", etc.
+		/// </value>
+		public string condition { get; set; }
 
 		/// <summary>
 		/// Obtém ou define a mudança de temperatura em relação ao dia anterior.
 		/// </summary>
 		/// <value>
-		/// Uma string que indica se a temperatura aumentou, diminuiu ou permaneceu a mesma em relação ao dia anterior.
+		/// Uma string indicando se a temperatura aumentou, diminuiu ou permaneceu a mesma em relação ao dia anterior.
 		/// </value>
 		public string TemperatureChange { get; set; }
 	}

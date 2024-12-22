@@ -49,7 +49,7 @@
 			// 
 			lblCity.AutoSize = true;
 			lblCity.Font = new Font("Segoe UI", 12F);
-			lblCity.ForeColor = Color.FromArgb(0, 123, 255);
+			lblCity.ForeColor = SystemColors.ControlDarkDark;
 			lblCity.Location = new Point(12, 9);
 			lblCity.Name = "lblCity";
 			lblCity.Size = new Size(83, 21);
@@ -60,7 +60,7 @@
 			// 
 			lblDescription.AutoSize = true;
 			lblDescription.Font = new Font("Segoe UI", 12F);
-			lblDescription.ForeColor = Color.FromArgb(40, 167, 69);
+			lblDescription.ForeColor = SystemColors.ControlDarkDark;
 			lblDescription.Location = new Point(12, 40);
 			lblDescription.Name = "lblDescription";
 			lblDescription.Size = new Size(115, 21);
@@ -85,19 +85,18 @@
 			dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
 			dgvForecast.DefaultCellStyle = dataGridViewCellStyle2;
 			dgvForecast.GridColor = Color.LightGray;
-			dgvForecast.Location = new Point(0, 0);
+			dgvForecast.Location = new Point(3, 3);
 			dgvForecast.Name = "dgvForecast";
 			dgvForecast.RowHeadersWidth = 51;
 			dgvForecast.RowTemplate.Height = 29;
-			dgvForecast.Size = new Size(784, 358);
+			dgvForecast.Size = new Size(1330, 515);
 			dgvForecast.TabIndex = 2;
-			dgvForecast.CellContentClick += dgvForecast_CellContentClick;
 			// 
 			// lblTemperature
 			// 
 			lblTemperature.AutoSize = true;
 			lblTemperature.Font = new Font("Segoe UI", 12F);
-			lblTemperature.ForeColor = Color.FromArgb(255, 87, 34);
+			lblTemperature.ForeColor = SystemColors.ControlDarkDark;
 			lblTemperature.Location = new Point(196, 9);
 			lblTemperature.Name = "lblTemperature";
 			lblTemperature.Size = new Size(122, 21);
@@ -110,13 +109,13 @@
 			panelForecast.Controls.Add(dgvForecast);
 			panelForecast.Location = new Point(12, 80);
 			panelForecast.Name = "panelForecast";
-			panelForecast.Size = new Size(784, 358);
+			panelForecast.Size = new Size(1336, 518);
 			panelForecast.TabIndex = 4;
 			// 
 			// btnOtherView
 			// 
 			btnOtherView.Cursor = Cursors.Hand;
-			btnOtherView.Location = new Point(701, 12);
+			btnOtherView.Location = new Point(1250, 9);
 			btnOtherView.Name = "btnOtherView";
 			btnOtherView.Size = new Size(95, 27);
 			btnOtherView.TabIndex = 5;
@@ -127,7 +126,7 @@
 			// WeatherForm
 			// 
 			BackColor = Color.FromArgb(248, 249, 250);
-			ClientSize = new Size(808, 461);
+			ClientSize = new Size(1360, 610);
 			Controls.Add(btnOtherView);
 			Controls.Add(lblTemperature);
 			Controls.Add(panelForecast);

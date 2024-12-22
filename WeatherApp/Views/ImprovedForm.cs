@@ -34,7 +34,7 @@ namespace WeatherApp.Views
 
 			try
 			{
-				// Tenta obter os dados de previsão do tempo
+				// Tenta obter os dados de previsão do tempo da API
 				weatherData = await apiClient.GetWeatherDataAsync();
 			}
 			catch (Exception ex)
@@ -44,7 +44,7 @@ namespace WeatherApp.Views
 				return;
 			}
 
-			// Exibe informações básicas
+			// Exibe informações básicas da API (máxima, mínima e umidade do dia atual)
 			lblCity.Text = weatherData.results.city;
 			lblTemp.Text = $"{weatherData.results.temp} °C";
 			lblDescription.Text = weatherData.results.description;
@@ -58,31 +58,62 @@ namespace WeatherApp.Views
 			// Consulta os dados existentes no banco de dados
 			var forecasts = database.GetAllWeatherDataFromDatabase();
 
+			// Se não houver dados no banco de dados, use os dados da API diretamente
 			if (forecasts.Count == 0)
 				forecasts = weatherData.results.forecast.ToList();
 
-			// Data da API no formato dd/MM/yyyy
-			string apiDate = weatherData.results.date.Substring(0, 5); // Extrai apenas dd/MM
+			// Data atual do sistema (formato dd/MM)
+			string currentDate = DateTime.Now.ToString("dd/MM");
 
-			// Lista para armazenar os cards filtrados
+			// Lista para armazenar os forecasts filtrados do banco de dados
 			List<Forecast> filteredForecasts = new List<Forecast>();
 
-			// Comparação da data
+			// Comparação da data atual com os dados do banco
 			foreach (var forecast in forecasts)
 			{
 				string dbDate = forecast.date.Substring(0, 5); // Extrai apenas dd/MM da data do banco
 
-				// Compara a data da API com a data do banco
-				if (string.Compare(apiDate, dbDate) <= 0)
+				// Verifica se a data do banco é igual ou posterior ao dia atual
+				if (string.Compare(dbDate, currentDate) >= 0)
 				{
 					filteredForecasts.Add(forecast);
 				}
 			}
 
-			// Exibe os cards filtrados
+			
+
+			// Procura e exibe as informações da previsão do dia atual (max, min, humidade)
+			var todayForecast = filteredForecasts.FirstOrDefault(f => f.date.Substring(0, 5) == currentDate);
+
+			if (todayForecast != null)
+			{
+				lblMax.Text = $"{todayForecast.max} °C";
+				lblMin.Text = $"{todayForecast.min} °C";
+				lblHumidity.Text = $"Umidade: {todayForecast.humidity}%";
+			}
+			else
+			{
+				// Caso não tenha dados do dia atual no banco, utiliza os dados da API
+				lblMax.Text = $"{weatherData.results.forecast[0].max} °C";
+				lblMin.Text = $"{weatherData.results.forecast[0].min} °C";
+				lblHumidity.Text = $"Umidade: {weatherData.results.forecast[0].humidity}%";
+			}
+
+			// Atualiza o campo "weekday" para "Hoje" caso o card seja para o dia atual
+			foreach (var forecast in filteredForecasts)
+			{
+				string dbDate = forecast.date.Substring(0, 5); // Extrai apenas dd/MM da data do banco
+
+				if (dbDate == currentDate)
+				{
+					forecast.weekday = "Hoje";
+				}
+			}
+
+			// Exibe os cards filtrados com as previsões
 			DisplayWeatherCards(filteredForecasts);
 
-			// Salva os dados mais recentes no banco
+			// Salva os dados mais recentes no banco de dados
 			database.SaveWeatherDataToDatabase(weatherData);
 		}
 

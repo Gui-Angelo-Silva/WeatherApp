@@ -24,8 +24,15 @@ CREATE TABLE WeatherForecast (
     MaxTemperature FLOAT NOT NULL,
     MinTemperature FLOAT NOT NULL,
     Humidity FLOAT NOT NULL,
+	 Cloudiness INT NOT NULL,
     Rain FLOAT NOT NULL,
+	 RainProbability FLOAT NOT NULL,
+	 WindSpeedy NVARCHAR(14) NOT NULL,
+	 Sunrise NVARCHAR(8) NOT NULL,
+	 Sunset NVARCHAR(8) NOT NULL,
+	 MoonPhase NVARCHAR(20) NOT NULL,
     Description NVARCHAR(255) NOT NULL,
+	 Condition NVARCHAR(20) NOT NULL,
     TemperatureChange NVARCHAR(50) NULL
 );
 ```
