@@ -98,7 +98,12 @@ namespace WeatherApp
 		private void btnOtherView_Click(object sender, EventArgs e)
 		{
 			ImprovedForm improvedForm = new ImprovedForm();
-			improvedForm.ShowDialog();			
+			improvedForm.ShowDialog();
+		}
+
+		private void dgvForecast_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
 		}
 	}
 }

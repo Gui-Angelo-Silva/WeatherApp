@@ -128,19 +128,19 @@ namespace WeatherApp.Repositories
 				var previousForecast = weatherData.results.forecast[i - 1];
 
 				string forecastDate = currentForecast.date;
-				double currentTemp = currentForecast.max;
-				double previousTemp = previousForecast.max;
+				double avgCurrentTemp = (currentForecast.min + currentForecast.max) / 2;
+				double avgPreviousTemp = (previousForecast.min + previousForecast.max) / 2;
 
-				// Verifica se houve aumento ou diminuição de temperatura
+				// Inicializa a variável para armazenar o status de mudança
 				string temperatureChange = "Sem mudança";
-				if (currentTemp > previousTemp)
-				{
+
+				// Lógica de comparação de temperaturas médias
+				if (avgCurrentTemp > avgPreviousTemp)
 					temperatureChange = "Aumentou";
-				}
-				else if (currentTemp < previousTemp)
-				{
-					temperatureChange = "Diminuíu";
-				}
+				else if (avgCurrentTemp < avgPreviousTemp)
+					temperatureChange = "Diminuiu";
+				else
+					temperatureChange = "Sem mudança";
 
 				// Atualiza a tabela com a mudança de temperatura
 				string updateQuery = "UPDATE WeatherForecast SET TemperatureChange = @TemperatureChange WHERE Date = @Date";
@@ -153,5 +153,6 @@ namespace WeatherApp.Repositories
 				}
 			}
 		}
+
 	}
 }

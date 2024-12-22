@@ -42,21 +42,31 @@ namespace WeatherApp.Models
 		/// A temperatura atual em graus Celsius (°C).
 		/// </value>
 		public double temp { get; set; }
-		
+
 		/// <summary>
-		/// Obtém ou define a condição do clima da cidade.
+		/// Obtém ou define a condição do clima da cidade, geralmente representada por uma palavra-chave
+		/// ou identificador que descreve o tipo de clima (ex.: "ensolarado", "nublado", etc.).
 		/// </summary>
 		/// <value>
-		/// Condição do clima descrito.
+		/// Um identificador ou string que descreve a condição do clima da cidade, como "clear", "cloudy", etc.
 		/// </value>
 		public string condition_slug { get; set; }
-		
+
 		/// <summary>
-		/// Obtém ou define a descrição do clima da cidade.
+		/// Obtém ou define a descrição detalhada do clima da cidade, fornecendo uma explicação textual
+		/// do estado atual do tempo (ex.: "céu limpo", "chuvas esparsas", etc.).
 		/// </summary>
 		/// <value>
-		/// Descrição do clima descrito.
+		/// Uma string que descreve de forma detalhada o clima da cidade, como "Céu claro com poucas nuvens", "Chuva leve", etc.
 		/// </value>
 		public string description { get; set; }
+
+		/// <summary>
+		/// Obtém ou define a data da busca do clima para a cidade.
+		/// </summary>
+		/// <value>
+		/// A data no formato "dd/MM", representando o dia da busca do clima.
+		/// </value>
+		public string date { get; set; }
 	}
 }

@@ -91,6 +91,7 @@
 			dgvForecast.RowTemplate.Height = 29;
 			dgvForecast.Size = new Size(784, 358);
 			dgvForecast.TabIndex = 2;
+			dgvForecast.CellContentClick += dgvForecast_CellContentClick;
 			// 
 			// lblTemperature
 			// 

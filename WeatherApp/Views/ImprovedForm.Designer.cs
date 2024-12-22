@@ -52,6 +52,7 @@
 			// 
 			// pNavbar
 			// 
+			pNavbar.AutoSize = true;
 			pNavbar.BackColor = Color.DodgerBlue;
 			pNavbar.Controls.Add(lblTem);
 			pNavbar.Controls.Add(label1);
@@ -83,7 +84,7 @@
 			// 
 			// lblIcon
 			// 
-			lblIcon.Location = new Point(22, 135);
+			lblIcon.Location = new Point(22, 130);
 			lblIcon.Name = "lblIcon";
 			lblIcon.Size = new Size(32, 32);
 			lblIcon.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -93,10 +94,10 @@
 			// lblTemp
 			// 
 			lblTemp.AutoSize = true;
-			lblTemp.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			lblTemp.Location = new Point(118, 144);
+			lblTemp.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lblTemp.Location = new Point(118, 142);
 			lblTemp.Name = "lblTemp";
-			lblTemp.Size = new Size(81, 37);
+			lblTemp.Size = new Size(90, 41);
 			lblTemp.TabIndex = 4;
 			lblTemp.Text = "22 °C";
 			// 
@@ -105,7 +106,7 @@
 			lblDescription.AutoSize = true;
 			lblDescription.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			lblDescription.ForeColor = SystemColors.WindowFrame;
-			lblDescription.Location = new Point(118, 183);
+			lblDescription.Location = new Point(118, 181);
 			lblDescription.Name = "lblDescription";
 			lblDescription.Size = new Size(202, 25);
 			lblDescription.TabIndex = 5;

@@ -33,6 +33,14 @@
         }
       },
       "coverlet.collector/6.0.0": {},
+      "ExCSS/4.2.3": {
+        "runtime": {
+          "lib/net7.0/ExCSS.dll": {
+            "assemblyVersion": "4.2.3.0",
+            "fileVersion": "4.2.3.0"
+          }
+        }
+      },
       "Microsoft.CodeCoverage/17.6.0": {
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -47,7 +55,7 @@
           "Microsoft.TestPlatform.TestHost": "17.6.0"
         }
       },
-      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "Microsoft.NETCore.Platforms/5.0.0": {},
       "Microsoft.TestPlatform.ObjectModel/17.6.0": {
         "dependencies": {
           "NuGet.Frameworks": "5.11.0",
@@ -295,6 +303,11 @@
           }
         }
       },
+      "Microsoft.Win32.SystemEvents/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.0"
+        }
+      },
       "Moq/4.20.72": {
         "dependencies": {
           "Castle.Core": "5.1.1"
@@ -308,7 +321,7 @@
       },
       "NETStandard.Library/2.0.0": {
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0"
+          "Microsoft.NETCore.Platforms": "5.0.0"
         }
       },
       "Newtonsoft.Json/13.0.3": {
@@ -374,6 +387,18 @@
           }
         }
       },
+      "Svg/3.4.7": {
+        "dependencies": {
+          "ExCSS": "4.2.3",
+          "System.Drawing.Common": "5.0.3"
+        },
+        "runtime": {
+          "lib/net8.0/Svg.dll": {
+            "assemblyVersion": "3.4.0.0",
+            "fileVersion": "3.4.7.1"
+          }
+        }
+      },
       "System.Data.SqlClient/4.9.0": {
         "dependencies": {
           "runtime.native.System.Data.SqlClient.sni": "4.4.0"
@@ -400,10 +425,16 @@
         }
       },
       "System.Diagnostics.EventLog/6.0.0": {},
+      "System.Drawing.Common/5.0.3": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "5.0.0"
+        }
+      },
       "System.Reflection.Metadata/1.6.0": {},
       "WeatherApp/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
+          "Svg": "3.4.7",
           "System.Data.SqlClient": "4.9.0"
         },
         "runtime": {
@@ -432,6 +463,13 @@
       "path": "coverlet.collector/6.0.0",
       "hashPath": "coverlet.collector.6.0.0.nupkg.sha512"
     },
+    "ExCSS/4.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SyeAfu2wL5247sipJoPUzQfjiwQtfSd8hN4IbgoyVcDx4PP6Dud4znwPRibWQzLtTlUxYYcbf5f4p+EfFC7KtQ==",
+      "path": "excss/4.2.3",
+      "hashPath": "excss.4.2.3.nupkg.sha512"
+    },
     "Microsoft.CodeCoverage/17.6.0": {
       "type": "package",
       "serviceable": true,
@@ -446,12 +484,12 @@
       "path": "microsoft.net.test.sdk/17.6.0",
       "hashPath": "microsoft.net.test.sdk.17.6.0.nupkg.sha512"
     },
-    "Microsoft.NETCore.Platforms/1.1.0": {
+    "Microsoft.NETCore.Platforms/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
-      "path": "microsoft.netcore.platforms/1.1.0",
-      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+      "sha512": "sha512-VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
+      "path": "microsoft.netcore.platforms/5.0.0",
+      "hashPath": "microsoft.netcore.platforms.5.0.0.nupkg.sha512"
     },
     "Microsoft.TestPlatform.ObjectModel/17.6.0": {
       "type": "package",
@@ -466,6 +504,13 @@
       "sha512": "sha512-7YdgUcIeCPVKLC7n7LNKDiEHWc7z3brkkYPdUbDnFsvf6WvY9UfzS0VSUJ8P2NgN0CDSD223GCJFSjSBLZRqOQ==",
       "path": "microsoft.testplatform.testhost/17.6.0",
       "hashPath": "microsoft.testplatform.testhost.17.6.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
+      "path": "microsoft.win32.systemevents/5.0.0",
+      "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
     },
     "Moq/4.20.72": {
       "type": "package",
@@ -544,6 +589,13 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
+    "Svg/3.4.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Omez7ly5BGhg3OzdV+LHZ5sI0+JQ6hF7WVKUeyHw4jRvcEWNCPCf1MWMBaf+R0DRBSZHx5EUHwBTEF+2oYtsAw==",
+      "path": "svg/3.4.7",
+      "hashPath": "svg.3.4.7.nupkg.sha512"
+    },
     "System.Data.SqlClient/4.9.0": {
       "type": "package",
       "serviceable": true,
@@ -557,6 +609,13 @@
       "sha512": "sha512-lcyUiXTsETK2ALsZrX+nWuHSIQeazhqPphLfaRxzdGaG93+0kELqpgEHtwWOlQe7+jSFnKwaCAgL4kjeZCQJnw==",
       "path": "system.diagnostics.eventlog/6.0.0",
       "hashPath": "system.diagnostics.eventlog.6.0.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/5.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rEQZuslijqdsO0pkJn7LtGBaMc//YVA8de0meGihkg9oLPaN+w+/Pb5d71lgp0YjPoKgBKNMvdq0IPnoW4PEng==",
+      "path": "system.drawing.common/5.0.3",
+      "hashPath": "system.drawing.common.5.0.3.nupkg.sha512"
     },
     "System.Reflection.Metadata/1.6.0": {
       "type": "package",

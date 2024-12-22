@@ -9,11 +9,55 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icons\clear_day.svg" />
+    <None Remove="Icons\clear_night.svg" />
+    <None Remove="Icons\cloud.svg" />
+    <None Remove="Icons\cloudly_day.svg" />
+    <None Remove="Icons\cloudly_night.svg" />
+    <None Remove="Icons\fog.svg" />
+    <None Remove="Icons\hail.svg" />
+    <None Remove="Icons\none_day.svg" />
+    <None Remove="Icons\none_night.svg" />
     <None Remove="Icons\rain.svg" />
+    <None Remove="Icons\snow.svg" />
+    <None Remove="Icons\storm.svg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Icons\clear_day.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\clear_night.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\cloud.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\cloudly_day.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\cloudly_night.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\fog.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\hail.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\none_day.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\none_night.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icons\rain.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\snow.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\storm.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

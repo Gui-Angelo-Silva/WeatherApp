@@ -112,3 +112,17 @@ C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\
 C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
 C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\WeatherApp.dll
 C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\WeatherApp.pdb
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\clear_day.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\clear_night.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\cloud.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\cloudly_day.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\cloudly_night.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\fog.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\hail.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\none_day.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\none_night.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\rain.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\snow.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Icons\storm.svg
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\ExCSS.dll
+C:\Users\guilh\OneDrive\Área de Trabalho\WeatherApp\WeatherApp.Tests\bin\Debug\net8.0-windows\Svg.dll
