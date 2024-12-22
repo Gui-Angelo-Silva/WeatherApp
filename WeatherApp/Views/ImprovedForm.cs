@@ -15,13 +15,37 @@ using WeatherApp.Services;
 
 namespace WeatherApp.Views
 {
+	/// <summary>
+	/// Representa o formulário melhorado do aplicativo, que exibe informações detalhadas sobre a previsão do tempo.
+	/// Este formulário carrega dados da API e do banco de dados, e exibe cards de previsão do tempo com base nas informações obtidas.
+	/// </summary>
 	public partial class ImprovedForm : Form
 	{
+		/// <summary>
+		/// Construtor da classe <see cref="ImprovedForm"/>.
+		/// Inicializa os componentes do formulário.
+		/// </summary>
 		public ImprovedForm()
 		{
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Manipulador de evento acionado quando o formulário é carregado.
+		/// Este método é responsável por obter os dados da API, filtrar os dados da previsão do tempo com base na data e exibir os resultados no formulário.
+		/// Ele também salva os dados obtidos no banco de dados e atualiza os cards exibidos.
+		/// </summary>
+		/// <param name="sender">O objeto que gerou o evento (neste caso, o formulário).</param>
+		/// <param name="e">Os dados do evento de carregamento do formulário.</param>
+		/// <remarks>
+		/// Este método realiza várias ações:
+		/// 1. Cria instâncias de objetos para acessar a API e o banco de dados.
+		/// 2. Obtém os dados da previsão do tempo da API.
+		/// 3. Exibe as informações básicas da previsão do tempo no formulário, como cidade, temperatura, umidade e máxima/mínima.
+		/// 4. Filtra os dados de acordo com a data atual e exibe cards com informações atualizadas.
+		/// 5. Atualiza a interface para garantir que o card do dia atual seja exibido com a palavra "Hoje" no campo weekday.
+		/// 6. Exibe as informações de previsão do tempo filtradas no formulário e salva os dados no banco de dados.
+		/// </remarks>
 		private async void ImprovedForm_Load(object sender, EventArgs e)
 		{
 			// Cria uma instância do repositório do banco de dados para armazenar os dados
@@ -80,7 +104,7 @@ namespace WeatherApp.Views
 				}
 			}
 
-			
+
 
 			// Procura e exibe as informações da previsão do dia atual (max, min, humidade)
 			var todayForecast = filteredForecasts.FirstOrDefault(f => f.date.Substring(0, 5) == currentDate);
@@ -163,7 +187,7 @@ namespace WeatherApp.Views
 				Padding = new Padding(10),
 				BackColor = Color.White,
 				Location = new Point(
-					(this.ClientSize.Width - (this.ClientSize.Width - 20)) / 2, 
+					(this.ClientSize.Width - (this.ClientSize.Width - 20)) / 2,
 					250
 				),
 				Size = new Size(this.ClientSize.Width - 20, this.ClientSize.Height - 250),
@@ -189,7 +213,7 @@ namespace WeatherApp.Views
 			{
 				Size = new Size(175, 100),
 				Margin = new Padding(10),
-				BackColor = Color.FromArgb(241, 241, 241), 
+				BackColor = Color.FromArgb(241, 241, 241),
 			};
 
 			Label lblDay = new Label
@@ -245,6 +269,31 @@ namespace WeatherApp.Views
 			card.Controls.Add(lblDay);
 
 			return card;
+		}
+
+		/// <summary>
+		/// Manipulador de evento acionado quando o usuário clica no controle de saída (lblExit).
+		/// Este método oculta o formulário atual e abre uma nova instância do formulário <see cref="WeatherForm"/> de forma não modal.
+		/// A interação com o formulário atual é suspensa enquanto o novo formulário está aberto.
+		/// </summary>
+		/// <param name="sender">O objeto que gerou o evento (neste caso, o controle de saída <see cref="lblExit"/>).</param>
+		/// <param name="e">Os dados do evento de clique no controle de saída.</param>
+		/// <remarks>
+		/// Este método executa as seguintes ações:
+		/// 1. Cria uma nova instância do formulário <see cref="WeatherForm"/>.
+		/// 2. Oculta o formulário atual, mas não o fecha.
+		/// 3. Abre o novo formulário <see cref="WeatherForm"/> usando o método <see cref="Form.Show"/>.
+		/// </remarks>
+		private void lblExit_Click(object sender, EventArgs e)
+		{
+			// Cria uma nova instância do WeatherForm
+			WeatherForm weatherForm = new WeatherForm();
+
+			// Oculta o formulário atual
+			this.Hide();
+
+			// Abre o WeatherForm de maneira não modal (não bloqueia o fluxo do código)
+			weatherForm.Show();
 		}
 	}
 }

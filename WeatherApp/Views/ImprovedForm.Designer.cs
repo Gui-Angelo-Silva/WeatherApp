@@ -31,6 +31,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImprovedForm));
 			lblCity = new Label();
 			pNavbar = new Panel();
+			lblExit = new Label();
 			lblTem = new Label();
 			label1 = new Label();
 			lblIcon = new PictureBox();
@@ -61,12 +62,26 @@
 			// 
 			pNavbar.AutoSize = true;
 			pNavbar.BackColor = Color.DodgerBlue;
+			pNavbar.Controls.Add(lblExit);
 			pNavbar.Controls.Add(lblTem);
 			pNavbar.Controls.Add(label1);
 			pNavbar.Location = new Point(1, 0);
 			pNavbar.Name = "pNavbar";
 			pNavbar.Size = new Size(742, 63);
 			pNavbar.TabIndex = 1;
+			// 
+			// lblExit
+			// 
+			lblExit.AutoSize = true;
+			lblExit.Cursor = Cursors.Hand;
+			lblExit.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+			lblExit.ForeColor = Color.Snow;
+			lblExit.Location = new Point(695, 11);
+			lblExit.Name = "lblExit";
+			lblExit.Size = new Size(35, 37);
+			lblExit.TabIndex = 4;
+			lblExit.Text = "X";
+			lblExit.Click += lblExit_Click;
 			// 
 			// lblTem
 			// 
@@ -188,7 +203,12 @@
 			Controls.Add(lblIcon);
 			Controls.Add(pNavbar);
 			Controls.Add(lblCity);
+			FormBorderStyle = FormBorderStyle.None;
+			MaximizeBox = false;
+			MdiChildrenMinimizedAnchorBottom = false;
 			Name = "ImprovedForm";
+			ShowIcon = false;
+			ShowInTaskbar = false;
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "ImprovedForm";
 			Load += ImprovedForm_Load;
@@ -215,5 +235,6 @@
 		private PictureBox pictureBox2;
 		private Label lblMax;
 		private Label lblMin;
+		private Label lblExit;
 	}
 }

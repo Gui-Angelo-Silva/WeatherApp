@@ -109,9 +109,22 @@ namespace WeatherApp
 		/// <param name="e">Os dados do evento de clique.</param>
 		private void btnOtherView_Click(object sender, EventArgs e)
 		{
-			// Cria e exibe o formulário ImprovedForm.
-			ImprovedForm improvedForm = new ImprovedForm();
-			improvedForm.ShowDialog();
+			try
+			{
+				// Cria e exibe o formulário ImprovedForm
+				ImprovedForm improvedForm = new ImprovedForm();
+
+				// Exibe o ImprovedForm de maneira modal
+				improvedForm.ShowDialog();
+
+				// Fecha o formulário atual após o ImprovedForm ser fechado
+				this.Hide();
+			}
+			catch (Exception ex)
+			{
+				// Caso ocorra um erro, exibe uma mensagem de erro
+				MessageBox.Show($"Erro ao fechar o formulário: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 	}
 }
